@@ -337,53 +337,6 @@ export default function CelebritiesPage() {
             </p>
           </div>
         </section>
-
-        {/* Comment Section */}
-        <section className="mb-16">
-          <div className="mb-8 flex items-center gap-4">
-            <div className="h-12 w-1 rounded-full bg-orange-500"></div>
-            <h2 className="font-serif text-3xl font-bold text-gray-800">கருத்துகள்</h2>
-          </div>
-
-          <div className="space-y-6">
-            <div className="border-b border-gray-100 pb-6">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-medium">
-                  R
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800">ரமேஷ்</p>
-                  <p className="text-xs text-gray-500">2 நாட்களுக்கு முன்</p>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                கமல் ஹாசன் பற்றிய தகவல்கள் மிகவும் சுவாரஸ்யமாக இருந்தது. அவர் திருச்சியில் வளர்ந்தது எனக்கு தெரியாது!
-              </p>
-            </div>
-
-            <div className="border-b border-gray-100 pb-6">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-medium">
-                  S
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800">சுரேஷ்</p>
-                  <p className="text-xs text-gray-500">1 வாரத்திற்கு முன்</p>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                ஜேம்ஸ் வசந்தன் பற்றிய தகவல்கள் அருமை. அவரது இசை எனக்கு மிகவும் பிடிக்கும். சுப்ரமணியபுரம் படத்தின் பாடல்கள் இன்றும் என்
-                பிடித்த பாடல்களில் உள்ளன.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <button className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors">
-              கருத்து சேர்க்க
-            </button>
-          </div>
-        </section>
       </main>
 
       {/* Celebrity Detail Modal */}

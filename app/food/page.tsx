@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { usePageViewTracking } from "@/hooks/use-analytics"
 import { SiteHeader } from "@/components/site-header"
 import Image from "next/image"
@@ -91,120 +89,6 @@ function SquareAd({ imageIndex = 0 }: { imageIndex?: number }) {
           className="w-[300px] h-[300px] object-contain"
         />
       </a>
-    </div>
-  )
-}
-
-// Comment section component
-function CommentSection() {
-  const [comments, setComments] = useState<Array<{ id: number; name: string; text: string; date: string }>>([
-    {
-      id: 1,
-      name: "Ramesh Kumar",
-      text: "I've tried the Manapparai Murukku and it's absolutely delicious! The crunch is perfect.",
-      date: "2 days ago",
-    },
-    {
-      id: 2,
-      name: "Priya Sundaram",
-      text: "The filter coffee at Krishna Bhavan is my favorite. I make sure to visit whenever I'm in Trichy.",
-      date: "1 week ago",
-    },
-  ])
-  const [newComment, setNewComment] = useState("")
-  const [userName, setUserName] = useState("")
-  const [showForm, setShowForm] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (newComment.trim() && userName.trim()) {
-      setComments([
-        ...comments,
-        {
-          id: Date.now(),
-          name: userName,
-          text: newComment,
-          date: "Just now",
-        },
-      ])
-      setNewComment("")
-      setShowForm(false)
-    }
-  }
-
-  return (
-    <div className="mt-16 border-t border-gray-200 pt-8">
-      <h3 className="mb-6 text-2xl font-serif font-bold text-gray-800">Comments ({comments.length})</h3>
-
-      <div className="space-y-6 mb-8">
-        {comments.map((comment) => (
-          <div key={comment.id} className="border-b border-gray-100 pb-6">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-medium">
-                {comment.name.charAt(0)}
-              </div>
-              <div>
-                <p className="font-medium text-gray-800">{comment.name}</p>
-                <p className="text-xs text-gray-500">{comment.date}</p>
-              </div>
-            </div>
-            <p className="text-gray-700">{comment.text}</p>
-          </div>
-        ))}
-      </div>
-
-      {!showForm ? (
-        <button
-          onClick={() => setShowForm(true)}
-          className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
-        >
-          Add Comment
-        </button>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="comment" className="block text-sm font-medium text-gray-700 mb-1">
-              Comment
-            </label>
-            <textarea
-              id="comment"
-              rows={4}
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              required
-            />
-          </div>
-          <div className="flex gap-2">
-            <button
-              type="submit"
-              className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
-            >
-              Post Comment
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowForm(false)}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      )}
     </div>
   )
 }
@@ -360,28 +244,6 @@ export default function FoodPage() {
             </div>
           </div>
 
-          {/* Newsletter Signup */}
-          <div className="bg-orange-50 p-6 rounded-lg">
-            <h3 className="text-xl font-serif font-bold text-gray-800 mb-3">Subscribe for More Food Adventures</h3>
-            <p className="text-gray-700 mb-4">
-              Get the latest updates on Trichy's culinary scene and exclusive recipes delivered to your inbox.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                required
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-
           {/* Item 4 */}
           <div className="relative">
             <div className="absolute -left-4 md:-left-16 top-0 font-serif text-8xl md:text-9xl font-bold text-orange-100 select-none">
@@ -449,43 +311,6 @@ export default function FoodPage() {
                 savoury versions exist, often served with chutneys and piping hot filter coffee.
               </p>
             </div>
-          </div>
-
-          {/* User Poll */}
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-serif font-bold text-gray-800 mb-3">What's Your Favorite Trichy Food?</h3>
-            <form className="space-y-3">
-              <div className="flex items-center">
-                <input type="radio" id="food1" name="favorite-food" className="mr-2" />
-                <label htmlFor="food1" className="text-gray-700">
-                  Puliyodarai (Tamarind Rice)
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input type="radio" id="food2" name="favorite-food" className="mr-2" />
-                <label htmlFor="food2" className="text-gray-700">
-                  Manapparai Murukku
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input type="radio" id="food3" name="favorite-food" className="mr-2" />
-                <label htmlFor="food3" className="text-gray-700">
-                  Filter Coffee
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input type="radio" id="food4" name="favorite-food" className="mr-2" />
-                <label htmlFor="food4" className="text-gray-700">
-                  Trichy Biryani
-                </label>
-              </div>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
-              >
-                Vote
-              </button>
-            </form>
           </div>
 
           {/* Item 8 */}
@@ -595,9 +420,6 @@ export default function FoodPage() {
             </Link>
           </div>
         </div>
-
-        {/* Comment Section */}
-        <CommentSection />
 
         {/* Final Ad Banner */}
         <div className="mt-12 overflow-hidden rounded-lg">

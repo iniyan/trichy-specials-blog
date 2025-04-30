@@ -202,6 +202,31 @@ export default function HomePage() {
               imageAlt="Traditional South Indian food from Trichy"
             />
           </div>
+
+          {/* Additional Latest Articles */}
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <ArticleCard
+              title="Summer in Trichy: Beat the Heat Guide"
+              description="Discover the best activities, places to visit, and ways to stay cool during the hot summer months in Trichy."
+              image="/trichy-summer-banner.jpg"
+              slug="/summer-guide"
+              imageAlt="Summer activities in Trichy"
+            />
+            <ArticleCard
+              title="The Cultural Heritage of Tamil Nadu"
+              description="Explore the rich cultural traditions, art forms, and historical significance of Tamil Nadu's heritage."
+              image="/tamil-classical-dance.jpg"
+              slug="/temples"
+              imageAlt="Bharatanatyam dancers performing classical Tamil dance"
+            />
+            <ArticleCard
+              title="Festivals of Trichy: A Year-Round Celebration"
+              description="Experience the vibrant festivals that bring color, devotion, and joy to the streets and temples of Trichy."
+              image="/trichy-temple-festival.jpg"
+              slug="/temples"
+              imageAlt="Temple festival celebration in Trichy"
+            />
+          </div>
         </section>
 
         {/* Second Ad Banner */}
@@ -219,33 +244,6 @@ export default function HomePage() {
                 />
               </div>
             </a>
-          </div>
-        </section>
-
-        {/* Newsletter Signup */}
-        <section className="mb-20">
-          <div className="rounded-lg bg-orange-50 p-8 md:p-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-4 font-serif text-3xl font-bold text-gray-800">Stay Updated with Trichy Specials</h2>
-              <p className="mb-8 text-lg text-gray-600">
-                Subscribe to our newsletter to receive the latest updates on Trichy's temples, celebrities, and culinary
-                delights.
-              </p>
-              <form className="flex flex-col items-center gap-4 sm:flex-row">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full flex-1 rounded-md border border-gray-300 px-4 py-3 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="w-full rounded-md bg-orange-600 px-6 py-3 font-medium text-white shadow-md transition-colors hover:bg-orange-700 sm:w-auto"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
           </div>
         </section>
       </main>

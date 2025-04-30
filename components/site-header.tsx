@@ -20,6 +20,10 @@ export function SiteHeader() {
             <span>Food</span>
             <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
+          <Link href="/summer-guide" className="text-gray-700 transition-colors hover:text-orange-600 relative group">
+            <span>Summer Guide</span>
+            <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
         </nav>
       </div>
     </header>
